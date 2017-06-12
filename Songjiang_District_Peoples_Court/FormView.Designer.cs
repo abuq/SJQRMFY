@@ -114,6 +114,8 @@
             // 
             // gvExcelData
             // 
+            this.gvExcelData.Appearance.FixedLine.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvExcelData.Appearance.FixedLine.Options.UseFont = true;
             this.gvExcelData.GridControl = this.gcExcelData;
             this.gvExcelData.Name = "gvExcelData";
             this.gvExcelData.OptionsBehavior.Editable = false;

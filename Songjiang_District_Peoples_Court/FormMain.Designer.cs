@@ -35,7 +35,6 @@
             this.tsmImport = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmSetting = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmExit = new System.Windows.Forms.ToolStripMenuItem();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
@@ -69,10 +68,9 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmImport,
             this.tsmShow,
-            this.tsmSetting,
-            this.tsmExit});
+            this.tsmSetting});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 114);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 92);
             // 
             // tsmImport
             // 
@@ -94,13 +92,6 @@
             this.tsmSetting.Size = new System.Drawing.Size(152, 22);
             this.tsmSetting.Text = "设置";
             this.tsmSetting.Click += new System.EventHandler(this.tsmSetting_Click);
-            // 
-            // tsmExit
-            // 
-            this.tsmExit.Name = "tsmExit";
-            this.tsmExit.Size = new System.Drawing.Size(152, 22);
-            this.tsmExit.Text = "退出";
-            this.tsmExit.Click += new System.EventHandler(this.tsmExit_Click);
             // 
             // xtraTabbedMdiManager1
             // 
@@ -250,7 +241,7 @@
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "松江区人民法院消息推送程序";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMain_FormClosed);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.Resize += new System.EventHandler(this.FormMain_Resize);
             this.contextMenuStrip1.ResumeLayout(false);
@@ -269,7 +260,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmImport;
         private System.Windows.Forms.ToolStripMenuItem tsmShow;
         private System.Windows.Forms.ToolStripMenuItem tsmSetting;
-        private System.Windows.Forms.ToolStripMenuItem tsmExit;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
         private DevExpress.XtraBars.PopupMenu popupMenu1;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;

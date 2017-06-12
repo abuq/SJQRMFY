@@ -55,15 +55,6 @@ namespace Songjiang_District_Peoples_Court
             this.ShowInTaskbar = true;
             this.WindowState = FormWindowState.Normal;
         }
-        /// <summary>
-        /// 退出程序
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void tsmExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
         private void FormMain_Load(object sender, EventArgs e)
         {
@@ -78,11 +69,6 @@ namespace Songjiang_District_Peoples_Court
                 }
             }
             barBtnShow_ItemClick(null,null);
-        }
-
-        private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
         }
 
         private void barBtnSetting_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -138,7 +124,19 @@ namespace Songjiang_District_Peoples_Court
         {
             FormSetting fs = new FormSetting();
             fs.Show();
-        } 
+        }
+
+        private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (FormExit())
+            {
+                e.Cancel = false;
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
         #endregion
 
         #region 私有方法
@@ -246,7 +244,21 @@ namespace Songjiang_District_Peoples_Court
                 }
             }
             return false;
-        } 
+        }
+
+        private bool FormExit()
+        {
+            FormExit fe = new FormExit();
+            if (fe.ShowDialog() == DialogResult.OK)
+            {
+                return true;
+            }
+            return false;
+        }
         #endregion
+
+     
+
+        
     }
 }

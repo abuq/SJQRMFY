@@ -33,15 +33,15 @@ namespace Songjiang_District_Peoples_Court
                 }
             }
             //没有下属信息则隐藏下属选择栏
-            if (GlobalEnvironment.GlobalUser.DownUserId != null && GlobalEnvironment.GlobalUser.DownUserId.Count > 0)
-            {
-                layoutControlItem2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
-                cbbDownUsers.Properties.Items.AddRange(GlobalEnvironment.GlobalUser.DownUserId);
-            }
-            else
-            {
-                layoutControlItem2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
-            }
+            //if (GlobalEnvironment.GlobalUser.DownUserId != null && GlobalEnvironment.GlobalUser.DownUserId.Count > 0)
+            //{
+            //    layoutControlItem2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+            //    cbbDownUsers.Properties.Items.AddRange(GlobalEnvironment.GlobalUser.DownUserId);
+            //}
+            //else
+            //{
+            //    layoutControlItem2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            //}
             //预加载信息
             if (cbbTitle.Properties.Items.Count > 0)
             {
@@ -60,6 +60,7 @@ namespace Songjiang_District_Peoples_Court
                 //currentView.RowFilter = string.Format("{0} = '{1}'", headerList[0], odtGroup.Rows[0]["GROUPNAME"].ToString());
                 gcExcelData.DataSource = currentView.ToTable();
                 gvExcelData.BestFitColumns();
+                gvExcelData.Appearance.HeaderPanel.Font = new Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             }
         }
 
@@ -85,6 +86,7 @@ namespace Songjiang_District_Peoples_Court
                 //currentView.RowFilter = string.Format("{0} = '{1}'", headerList[0], GlobalEnvironment.GlobalUser.GroupName);
                 gcExcelData.DataSource = currentView.ToTable();
                 gvExcelData.BestFitColumns();
+                gvExcelData.Appearance.HeaderPanel.Font = new Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             }
         }
 
