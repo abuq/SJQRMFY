@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.IO;
 using System.Linq;
@@ -30,6 +31,14 @@ namespace Songjiang_District_Peoples_Court
         /// 当前excel标题
         /// </summary>
         public static string title = "";
+        /// <summary>
+        /// 业务庭结案情况表不需要显示的列
+        /// </summary>
+        public static string ignoreHeader = ConfigurationManager.AppSettings["ignoreHeader"].ToString();
+        /// <summary>
+        /// 窗口启动大小
+        /// </summary>
+        public static int windowState = Convert.ToInt32(ConfigurationManager.AppSettings["windowState"]); 
     }
 
 }

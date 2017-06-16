@@ -87,7 +87,7 @@ namespace Songjiang_District_Peoples_Court
         {
             try
             {
-                string sql = @"select distinct title from MonthStatement";
+                string sql = @"select top 20 title from [MonthStatement] group by title,convert(varchar(10),importdt,120) order by  convert(varchar(10),importdt,120) desc";
                 using (SqlDataAdapter adapter = new SqlDataAdapter(sql, connStr))
                 {
                     using (DataSet ds = new DataSet())

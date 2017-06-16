@@ -20,10 +20,12 @@ namespace Songjiang_District_Peoples_Court
         public FormMain()
         {
             InitializeComponent();
+            this.WindowState = (System.Windows.Forms.FormWindowState)GlobalEnvironment.windowState;
+            this.ShowInTaskbar = GlobalEnvironment.windowState != 1;
         }
         #region 私有变量
         private DataTable odtImport = null;
-        private SqlHelper osh = new SqlHelper(GlobalEnvironment.connStr); 
+        private SqlHelper osh = new SqlHelper(GlobalEnvironment.connStr);
         #endregion
 
         #region 控件事件
@@ -68,7 +70,7 @@ namespace Songjiang_District_Peoples_Court
                     item.Value.Start();
                 }
             }
-            barBtnShow_ItemClick(null,null);
+            barBtnShow_ItemClick(null, null);
         }
 
         private void barBtnSetting_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -197,14 +199,14 @@ namespace Songjiang_District_Peoples_Court
                 {
                     if (odr["title"].ToString() == GlobalEnvironment.title)
                     {
-                        XtraMessageBox.Show("已存在此数据，不能再次导入！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        XtraMessageBox.Show(string.Format("已存在{0}的数据，不能再次导入！", GlobalEnvironment.title), "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
                 }
             }
             if (odtImport != null && odtImport.Rows.Count > 0)
             {
-                if (osh.InsertDataTable(odtImport,0))
+                if (osh.InsertDataTable(odtImport, 0))
                 {
                     XtraMessageBox.Show("导入成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     GlobalEnvironment.title = "";
@@ -257,8 +259,8 @@ namespace Songjiang_District_Peoples_Court
         }
         #endregion
 
-     
 
-        
+
+
     }
 }

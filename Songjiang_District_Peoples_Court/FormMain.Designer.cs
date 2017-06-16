@@ -70,26 +70,26 @@
             this.tsmShow,
             this.tsmSetting});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(125, 70);
             // 
             // tsmImport
             // 
             this.tsmImport.Name = "tsmImport";
-            this.tsmImport.Size = new System.Drawing.Size(152, 22);
+            this.tsmImport.Size = new System.Drawing.Size(124, 22);
             this.tsmImport.Text = "数据导入";
             this.tsmImport.Click += new System.EventHandler(this.tsmImport_Click);
             // 
             // tsmShow
             // 
             this.tsmShow.Name = "tsmShow";
-            this.tsmShow.Size = new System.Drawing.Size(152, 22);
+            this.tsmShow.Size = new System.Drawing.Size(124, 22);
             this.tsmShow.Text = "数据查看";
             this.tsmShow.Click += new System.EventHandler(this.tsmShow_Click);
             // 
             // tsmSetting
             // 
             this.tsmSetting.Name = "tsmSetting";
-            this.tsmSetting.Size = new System.Drawing.Size(152, 22);
+            this.tsmSetting.Size = new System.Drawing.Size(124, 22);
             this.tsmSetting.Text = "设置";
             this.tsmSetting.Click += new System.EventHandler(this.tsmSetting_Click);
             // 
@@ -136,6 +136,7 @@
             // bar3
             // 
             this.bar3.BarName = "Main menu";
+            this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Top;
             this.bar3.DockCol = 0;
             this.bar3.DockRow = 0;
             this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
@@ -239,6 +240,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "FormMain";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "松江区人民法院消息推送程序";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);

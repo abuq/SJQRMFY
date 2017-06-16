@@ -76,11 +76,17 @@ namespace Songjiang_District_Peoples_Court
             {
                 string headers = odsHeader.Tables[0].Rows[0]["header"].ToString();
                 headerList = headers.Split(',').ToList();
+                List<string> ignoreHeader = GlobalEnvironment.ignoreHeader.Split(',').ToList();
                 DataTable odtStatement = odsStatement.Tables[0];
                 //按照顺序将表头名称改成excel中文
                 for (int i = 0; i < odtStatement.Columns.Count; i++)
                 {
                     odtStatement.Columns[i].ColumnName = headerList[i];
+                }
+                //不需要显示的列删除
+                foreach (var iHeader in ignoreHeader)
+                {
+                    odtStatement.Columns.Remove(iHeader);
                 }
                 currentView = new DataView(odtStatement);
                 //currentView.RowFilter = string.Format("{0} = '{1}'", headerList[0], GlobalEnvironment.GlobalUser.GroupName);
