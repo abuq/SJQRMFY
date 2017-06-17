@@ -154,13 +154,13 @@
             // 
             // gvExcelData
             // 
-            this.gvExcelData.Appearance.FixedLine.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gvExcelData.Appearance.FixedLine.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold);
             this.gvExcelData.Appearance.FixedLine.Options.UseFont = true;
-            this.gvExcelData.Appearance.FocusedRow.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gvExcelData.Appearance.FocusedRow.Font = new System.Drawing.Font("Tahoma", 13F);
             this.gvExcelData.Appearance.FocusedRow.Options.UseFont = true;
-            this.gvExcelData.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gvExcelData.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 13F);
             this.gvExcelData.Appearance.Row.Options.UseFont = true;
-            this.gvExcelData.Appearance.SelectedRow.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gvExcelData.Appearance.SelectedRow.Font = new System.Drawing.Font("Tahoma", 13F);
             this.gvExcelData.Appearance.SelectedRow.Options.UseFont = true;
             this.gvExcelData.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gvExcelData.GridControl = this.gcExcelData;

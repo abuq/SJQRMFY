@@ -63,7 +63,7 @@ namespace Songjiang_District_Peoples_Court
                     }
                     sqlHeader = string.Format(sqlHeader, GlobalEnvironment.title, sCol);
                     com.CommandText = sqlHeader;
-                    com.ExecuteNonQuery();   
+                    com.ExecuteNonQuery();
                     trans.Commit();//如果全部执行完毕.提交 
                 }
             }
@@ -121,9 +121,9 @@ namespace Songjiang_District_Peoples_Court
                     {
                         adapter.Fill(ds);
                         adapter.SelectCommand.Parameters.Clear();
-                        return ds;     
+                        return ds;
                     }
-                }              
+                }
             }
             catch (Exception ex)
             {
@@ -157,7 +157,11 @@ namespace Songjiang_District_Peoples_Court
                 return null;
             }
         }
-
+        /// <summary>
+        /// 表头数据特殊处理
+        /// </summary>
+        /// <param name="dt"></param>
+        /// <returns></returns>
         private static string[] GetColumnsByDataTable(DataTable dt)
         {
             string[] strColumns = null;
@@ -168,7 +172,34 @@ namespace Songjiang_District_Peoples_Court
                 strColumns = new string[columnNum];
                 for (int i = 0; i < dt.Columns.Count; i++)
                 {
-                    strColumns[i] = string.Format("{0}", dt.Columns[i].ColumnName);
+                    switch (i)
+                    {
+                        case 5:
+                        case 6:
+                        case 7:
+                            dt.Columns[i].ColumnName = "收案" + dt.Columns[i].ColumnName;
+                            break;
+                        case 10:
+                        case 11:
+                        case 12:
+                            dt.Columns[i].ColumnName = "结案" + dt.Columns[i].ColumnName;
+                            break;
+                        case 14:
+                        case 15:
+                            dt.Columns[i].ColumnName = "未结案" + dt.Columns[i].ColumnName;
+                            break;
+                        case 18:
+                        case 19:
+                            dt.Columns[i].ColumnName = "累计" + dt.Columns[i].ColumnName;
+                            break;
+                        case 21:
+                        case 22:
+                            dt.Columns[i].ColumnName = "结案率" + dt.Columns[i].ColumnName;
+                            break;
+                        default:
+                            break;
+                    }
+                    strColumns[i] = dt.Columns[i].ColumnName.Replace(string.Format("{{{0}}}", i), "");
                 }
             }
             return strColumns;

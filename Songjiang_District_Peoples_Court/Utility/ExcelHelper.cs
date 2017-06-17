@@ -133,7 +133,7 @@ namespace Songjiang_District_Peoples_Court
                                 string cellValue = cell.StringCellValue;
                                 if (cellValue != null)
                                 {
-                                    DataColumn column = new DataColumn(cellValue + i);
+                                    DataColumn column = new DataColumn(cellValue + string.Format("{{{0}}}",i));
                                     data.Columns.Add(column);
                                 }
                             }

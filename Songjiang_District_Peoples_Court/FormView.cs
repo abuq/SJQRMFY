@@ -60,7 +60,7 @@ namespace Songjiang_District_Peoples_Court
                 //currentView.RowFilter = string.Format("{0} = '{1}'", headerList[0], odtGroup.Rows[0]["GROUPNAME"].ToString());
                 gcExcelData.DataSource = currentView.ToTable();
                 gvExcelData.BestFitColumns();
-                gvExcelData.Appearance.HeaderPanel.Font = new Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                gvExcelData.Appearance.HeaderPanel.Font = new Font("Tahoma", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             }
         }
 
@@ -91,8 +91,9 @@ namespace Songjiang_District_Peoples_Court
                 currentView = new DataView(odtStatement);
                 //currentView.RowFilter = string.Format("{0} = '{1}'", headerList[0], GlobalEnvironment.GlobalUser.GroupName);
                 gcExcelData.DataSource = currentView.ToTable();
+                gcExcelData.MainView.PopulateColumns();
                 gvExcelData.BestFitColumns();
-                gvExcelData.Appearance.HeaderPanel.Font = new Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                gvExcelData.Appearance.HeaderPanel.Font = new Font("Tahoma", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             }
         }
 
