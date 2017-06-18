@@ -148,6 +148,12 @@
     <Compile Include="FormExit.Designer.cs">
       <DependentUpon>FormExit.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormImportManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormImportManagement.Designer.cs">
+      <DependentUpon>FormImportManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utility\ExcelHelper.cs" />
     <Compile Include="FormSetting.cs">
       <SubType>Form</SubType>
@@ -181,6 +187,9 @@
     <Compile Include="Model\UserInfo.cs" />
     <EmbeddedResource Include="FormExit.resx">
       <DependentUpon>FormExit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormImportManagement.resx">
+      <DependentUpon>FormImportManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSetting.resx">
       <DependentUpon>FormSetting.cs</DependentUpon>

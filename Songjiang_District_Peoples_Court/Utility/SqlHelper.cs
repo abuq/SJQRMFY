@@ -87,7 +87,7 @@ namespace Songjiang_District_Peoples_Court
         {
             try
             {
-                string sql = @"select top 20 title from [MonthStatement] group by title,convert(varchar(10),importdt,120) order by  convert(varchar(10),importdt,120) desc";
+                string sql = @"select top 20 title,convert(varchar(16),importdt,120) as importdt from [MonthStatement] group by title,convert(varchar(16),importdt,120) order by  convert(varchar(16),importdt,120) desc";
                 using (SqlDataAdapter adapter = new SqlDataAdapter(sql, connStr))
                 {
                     using (DataSet ds = new DataSet())
@@ -157,6 +157,44 @@ namespace Songjiang_District_Peoples_Court
                 return null;
             }
         }
+
+        /// <summary>
+        /// 根据标题删除表中数据
+        /// </summary>
+        /// <returns></returns>
+        public bool DeleteByTitle(string title)
+        {
+            SqlConnection con = new SqlConnection(connStr);//连接数据库
+            con.Open();
+            SqlTransaction trans = con.BeginTransaction();//事物对象 
+            try
+            {
+                SqlCommand com = new SqlCommand();//数据操作对象  
+                com.Connection = con;//指定连接  
+                com.Transaction = trans;//指定事物
+                string sql = @"delete from [MonthStatement] where title = '{0}'";
+                string sqlHeader = @"delete from [StatementHeader] where title = '{0}'";
+
+                com.CommandText = string.Format(sql, title);
+                com.ExecuteNonQuery();//执行该行   
+
+                com.CommandText = string.Format(sqlHeader, title);
+                com.ExecuteNonQuery();
+                trans.Commit();//如果全部执行完毕.提交 
+
+            }
+            catch (Exception ex)
+            {
+                trans.Rollback();//如果有异常.回滚. 
+                return false;
+            }
+            finally
+            {
+                con.Close();//关闭连接 
+            }
+            return true;
+        }
+
         /// <summary>
         /// 表头数据特殊处理
         /// </summary>

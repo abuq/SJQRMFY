@@ -74,26 +74,34 @@ namespace Songjiang_District_Peoples_Court
             DataSet odsHeader = osh.GetHeader(cbbTitle.SelectedItem.ToString());
             if (odsStatement != null && odsStatement.Tables.Count == 1 && odsHeader != null && odsHeader.Tables.Count == 1)
             {
-                string headers = odsHeader.Tables[0].Rows[0]["header"].ToString();
-                headerList = headers.Split(',').ToList();
-                List<string> ignoreHeader = GlobalEnvironment.ignoreHeader.Split(',').ToList();
-                DataTable odtStatement = odsStatement.Tables[0];
-                //按照顺序将表头名称改成excel中文
-                for (int i = 0; i < odtStatement.Columns.Count; i++)
+                if (odsStatement.Tables[0].Rows.Count > 0 && odsHeader.Tables[0].Rows.Count > 0)
                 {
-                    odtStatement.Columns[i].ColumnName = headerList[i];
+                    string headers = odsHeader.Tables[0].Rows[0]["header"].ToString();
+                    headerList = headers.Split(',').ToList();
+                    List<string> ignoreHeader = GlobalEnvironment.ignoreHeader.Split(',').ToList();
+                    DataTable odtStatement = odsStatement.Tables[0];
+                    //按照顺序将表头名称改成excel中文
+                    for (int i = 0; i < odtStatement.Columns.Count; i++)
+                    {
+                        odtStatement.Columns[i].ColumnName = headerList[i];
+                    }
+                    //不需要显示的列删除
+                    foreach (var iHeader in ignoreHeader)
+                    {
+                        odtStatement.Columns.Remove(iHeader);
+                    }
+                    currentView = new DataView(odtStatement);
+                    //currentView.RowFilter = string.Format("{0} = '{1}'", headerList[0], GlobalEnvironment.GlobalUser.GroupName);
+                    gcExcelData.DataSource = currentView.ToTable();
+                    gcExcelData.MainView.PopulateColumns();
+                    gvExcelData.BestFitColumns();
+                    gvExcelData.Appearance.HeaderPanel.Font = new Font("Tahoma", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 }
-                //不需要显示的列删除
-                foreach (var iHeader in ignoreHeader)
+                else
                 {
-                    odtStatement.Columns.Remove(iHeader);
+                    gcExcelData.DataSource = null;
+                    gcExcelData.MainView.PopulateColumns();
                 }
-                currentView = new DataView(odtStatement);
-                //currentView.RowFilter = string.Format("{0} = '{1}'", headerList[0], GlobalEnvironment.GlobalUser.GroupName);
-                gcExcelData.DataSource = currentView.ToTable();
-                gcExcelData.MainView.PopulateColumns();
-                gvExcelData.BestFitColumns();
-                gvExcelData.Appearance.HeaderPanel.Font = new Font("Tahoma", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             }
         }
 

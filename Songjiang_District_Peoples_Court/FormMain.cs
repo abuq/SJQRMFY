@@ -62,6 +62,10 @@ namespace Songjiang_District_Peoples_Court
         {
             barStaticItem1.Caption = GlobalEnvironment.GlobalUser.UserName;
             xtraTabbedMdiManager1.MdiParent = this;
+            if (GlobalEnvironment.GlobalUser.UserName != "戴敏")
+            {
+                barBtnManagement.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
             if (FormSetting.ReadFiles())
             {
                 foreach (var item in GlobalEnvironment.TimeTriggers)
@@ -138,6 +142,11 @@ namespace Songjiang_District_Peoples_Court
             {
                 e.Cancel = true;
             }
+        }
+        private void barBtnManagement_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FormImportManagement fim = new FormImportManagement();
+            OpenMDIWindow(fim);
         }
         #endregion
 
@@ -258,6 +267,8 @@ namespace Songjiang_District_Peoples_Court
             return false;
         }
         #endregion
+
+
 
 
 
