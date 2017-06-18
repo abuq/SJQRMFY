@@ -88,7 +88,10 @@ namespace Songjiang_District_Peoples_Court
                     //不需要显示的列删除
                     foreach (var iHeader in ignoreHeader)
                     {
-                        odtStatement.Columns.Remove(iHeader);
+                        if (odtStatement.Columns.Contains(iHeader))
+                        {
+                            odtStatement.Columns.Remove(iHeader); 
+                        }
                     }
                     currentView = new DataView(odtStatement);
                     //currentView.RowFilter = string.Format("{0} = '{1}'", headerList[0], GlobalEnvironment.GlobalUser.GroupName);
