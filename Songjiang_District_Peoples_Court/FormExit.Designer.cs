@@ -30,6 +30,7 @@
         {
             this.txtUserName = new DevExpress.XtraEditors.TextEdit();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtPassword = new DevExpress.XtraEditors.TextEdit();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.btnLogin = new DevExpress.XtraEditors.SimpleButton();
@@ -38,7 +39,6 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.txtUserName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -75,6 +75,15 @@
             this.layoutControl1.Size = new System.Drawing.Size(284, 113);
             this.layoutControl1.TabIndex = 6;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(12, 12);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(144, 14);
+            this.labelControl1.StyleController = this.layoutControl1;
+            this.labelControl1.TabIndex = 6;
+            this.labelControl1.Text = "需输入用户名密码方可退出";
             // 
             // txtPassword
             // 
@@ -161,15 +170,6 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(12, 12);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(144, 14);
-            this.labelControl1.StyleController = this.layoutControl1;
-            this.labelControl1.TabIndex = 6;
-            this.labelControl1.Text = "需输入用户名密码方可退出";
-            // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.labelControl1;
@@ -187,7 +187,7 @@
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(284, 113);
             this.Controls.Add(this.layoutControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormExit";
