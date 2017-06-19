@@ -23,6 +23,7 @@ namespace Songjiang_District_Peoples_Court
         #endregion
         private void FormView_Load(object sender, EventArgs e)
         {
+            
             //获取标题信息
             DataSet odsTitle = osh.GetTitle();
             if (odsTitle != null && odsTitle.Tables.Count == 1)
@@ -48,6 +49,7 @@ namespace Songjiang_District_Peoples_Court
                 cbbTitle.SelectedIndex = 0;
                 btnSearch_Click(null, null);
             }
+            gvExcelData.BestFitColumns();
         }
 
         private void cbbDownUsers_SelectedIndexChanged(object sender, EventArgs e)
@@ -78,6 +80,9 @@ namespace Songjiang_District_Peoples_Court
                 {
                     string headers = odsHeader.Tables[0].Rows[0]["header"].ToString();
                     headerList = headers.Split(',').ToList();
+                    //两列特殊处理
+                    headerList.RemoveAt(8);
+                    headerList.RemoveAt(3);
                     List<string> ignoreHeader = GlobalEnvironment.ignoreHeader.Split(',').ToList();
                     DataTable odtStatement = odsStatement.Tables[0];
                     //按照顺序将表头名称改成excel中文

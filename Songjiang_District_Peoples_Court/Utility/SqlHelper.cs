@@ -111,7 +111,7 @@ namespace Songjiang_District_Peoples_Court
         /// <returns></returns>
         public DataSet GetStatement(string title)
         {
-            string sql = @"select [department],[lyDeposit],[ltyDeposit],[tbAcceptance],[Acceptance],[AcceptanceCount],[lyAcceptance],[AcceptanceCompared],[tbClosedCase],[ClosedCase],[ClosedCaseCount],[lyClosedCase],[ClosedCaseCompared],[NotClosed],[lyNotClosed],[NotClosedCompared],[monthConcurrentClosingrate],[allConcurrentClosingrate],[lyConcurrentClosingrate],[ConcurrentClosingrateCompared],[Closingrate],[lyClosingrate],[ClosingrateCompared] from v_MonthStatement where title = '{0}'";
+            string sql = @"select [department],[lyDeposit],[ltyDeposit],[Acceptance],[AcceptanceCount],[lyAcceptance],[AcceptanceCompared],[ClosedCase],[ClosedCaseCount],[lyClosedCase],[ClosedCaseCompared],[NotClosed],[lyNotClosed],[NotClosedCompared],[monthConcurrentClosingrate],[allConcurrentClosingrate],[lyConcurrentClosingrate],[ConcurrentClosingrateCompared],[Closingrate],[lyClosingrate],[ClosingrateCompared] from v_MonthStatement where title = '{0}'";
             try
             {
                 sql = string.Format(sql, title);
