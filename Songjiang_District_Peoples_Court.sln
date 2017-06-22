@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Songjiang_District_Peoples_Court", "Songjiang_District_Peoples_Court\Songjiang_District_Peoples_Court.csproj", "{48E58965-98AD-48DF-BDB5-CAD47442E45D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sqlitetest", "sqlitetest\sqlitetest.csproj", "{5E177011-7FE0-4AEA-880B-BDC9214558B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServiceTest", "WebServiceTest\WebServiceTest.csproj", "{1B63D075-E54D-4C9F-8AA4-CA90B323CE36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServiceDataHandler", "WebServiceDataHandler\WebServiceDataHandler.csproj", "{5C36F5F4-8CAC-44C8-90A2-860493218AB5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +40,26 @@ Global
 		{5E177011-7FE0-4AEA-880B-BDC9214558B9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5E177011-7FE0-4AEA-880B-BDC9214558B9}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
 		{5E177011-7FE0-4AEA-880B-BDC9214558B9}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{1B63D075-E54D-4C9F-8AA4-CA90B323CE36}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{1B63D075-E54D-4C9F-8AA4-CA90B323CE36}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{1B63D075-E54D-4C9F-8AA4-CA90B323CE36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B63D075-E54D-4C9F-8AA4-CA90B323CE36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B63D075-E54D-4C9F-8AA4-CA90B323CE36}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B63D075-E54D-4C9F-8AA4-CA90B323CE36}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{1B63D075-E54D-4C9F-8AA4-CA90B323CE36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B63D075-E54D-4C9F-8AA4-CA90B323CE36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B63D075-E54D-4C9F-8AA4-CA90B323CE36}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{1B63D075-E54D-4C9F-8AA4-CA90B323CE36}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{5C36F5F4-8CAC-44C8-90A2-860493218AB5}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{5C36F5F4-8CAC-44C8-90A2-860493218AB5}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{5C36F5F4-8CAC-44C8-90A2-860493218AB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C36F5F4-8CAC-44C8-90A2-860493218AB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C36F5F4-8CAC-44C8-90A2-860493218AB5}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C36F5F4-8CAC-44C8-90A2-860493218AB5}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{5C36F5F4-8CAC-44C8-90A2-860493218AB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C36F5F4-8CAC-44C8-90A2-860493218AB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C36F5F4-8CAC-44C8-90A2-860493218AB5}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{5C36F5F4-8CAC-44C8-90A2-860493218AB5}.SingleImage|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

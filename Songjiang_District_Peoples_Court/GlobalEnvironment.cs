@@ -36,7 +36,7 @@ namespace Songjiang_District_Peoples_Court
         /// </summary>
         public static string ignoreHeader = ConfigurationManager.AppSettings["ignoreHeader"].ToString();
         /// <summary>
-        /// 窗口启动大小
+        /// 窗口启动大小 2最大化 1最小化 0正常大小
         /// </summary>
         public static int windowState = Convert.ToInt32(ConfigurationManager.AppSettings["windowState"]); 
     }
