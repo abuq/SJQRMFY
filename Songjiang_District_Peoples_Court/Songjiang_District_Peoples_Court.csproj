@@ -94,6 +94,12 @@
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="ESBasic">
+      <HintPath>..\..\OAUS源码\Resources\ESBasic.dll</HintPath>
+    </Reference>
+    <Reference Include="ESFramework">
+      <HintPath>..\..\OAUS源码\Resources\ESFramework.dll</HintPath>
+    </Reference>
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
       <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
       <Private>True</Private>
@@ -113,6 +119,9 @@
     <Reference Include="NPOI.OpenXmlFormats, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
       <HintPath>..\packages\NPOI.2.3.0\lib\net40\NPOI.OpenXmlFormats.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="OAUS.Core">
+      <HintPath>..\..\OAUS源码\OAUS.Core\bin\Release\OAUS.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -154,6 +163,12 @@
     <Compile Include="FormImportManagement.Designer.cs">
       <DependentUpon>FormImportManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpdate.Designer.cs">
+      <DependentUpon>FormUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utility\ExcelHelper.cs" />
     <Compile Include="FormSetting.cs">
       <SubType>Form</SubType>
@@ -185,6 +200,7 @@
     <Compile Include="Utility\SqlHelper.cs" />
     <Compile Include="Utility\SqliteHelper.cs" />
     <Compile Include="Model\UserInfo.cs" />
+    <Compile Include="Utility\Updater.cs" />
     <EmbeddedResource Include="FormExit.resx">
       <DependentUpon>FormExit.cs</DependentUpon>
     </EmbeddedResource>
@@ -200,6 +216,9 @@
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormUpdate.resx">
+      <DependentUpon>FormUpdate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormView.resx">
       <DependentUpon>FormView.cs</DependentUpon>
     </EmbeddedResource>
@@ -212,6 +231,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

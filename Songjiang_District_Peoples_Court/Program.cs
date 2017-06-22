@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Songjiang_District_Peoples_Court.Properties;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
@@ -28,12 +30,22 @@ namespace Songjiang_District_Peoples_Court
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new FormLogin());
-            FormLogin login = new FormLogin();
-            if (login.ShowDialog() == DialogResult.OK)//注意这里要显示模态对话框
-            {
-                Application.Run(new FormMain());
+
+            string serverIP = ConfigurationManager.AppSettings["ServerIP"];
+            int serverPort = int.Parse(ConfigurationManager.AppSettings["ServerPort"]);
+            string title = ConfigurationManager.AppSettings["Title"];
+            FormUpdate fu = new FormUpdate(serverIP, serverPort, title);
+            if (fu.ShowDialog() == DialogResult.OK)
+            { 
+                FormLogin login = new FormLogin();
+                if (login.ShowDialog() == DialogResult.OK)//注意这里要显示模态对话框
+                {
+                    Application.Run(new FormMain());
+                }
             }
+
+           
+            
         }
     }
 }
