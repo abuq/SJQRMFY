@@ -8,6 +8,7 @@ using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Xml;
+using System.IO;
 
 namespace WebServiceDataHandler
 {
@@ -79,13 +80,54 @@ namespace WebServiceDataHandler
             rybm = txtRybm.Text;
             other = txtOther.Text;
             xml = gyReport.getIndexValue(code, begDay, begMonth, begDay, endYear, endMonth, endDay, fybm, bmbm, rybm, other);
-            if (xml.Length>0)
+            if (xml.Length > 0)
             {
-                
+
                 XmlDocument xd = new XmlDocument();
                 xd.LoadXml(xml);
                 memoEdit1.Text = xd.InnerXml;
+                gcXml.DataSource = ConvertXMLToDataSet(xml).Tables[0];
+                gcXml.MainView.PopulateColumns();
             }
+        }
+
+        private DataSet ConvertXMLToDataSet(string xmlData)
+        {
+            StringReader stream = null;
+            XmlTextReader reader = null;
+            try
+            {
+                DataSet xmlDS = new DataSet();
+                stream = new StringReader(xmlData);
+                reader = new XmlTextReader(stream);
+                xmlDS.ReadXml(reader);
+                return xmlDS;
+            }
+            catch (Exception ex)
+            {
+                string strTest = ex.Message;
+                return null;
+            }
+            finally
+            {
+                if (reader != null)
+                    reader.Close();
+            }
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Excel2003文件(*.xls)|*.xls";
+            sfd.ValidateNames = true;
+            //sfd.CheckFileExists = true;
+            //sfd.CheckPathExists = true;
+            sfd.RestoreDirectory = true;
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                gcXml.ExportToXls(sfd.FileName);
+            }
+
         }
     }
 }
