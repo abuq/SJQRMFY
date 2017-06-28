@@ -197,6 +197,7 @@
             // 
             // txtFybm
             // 
+            this.txtFybm.EditValue = "21A000";
             this.txtFybm.Location = new System.Drawing.Point(90, 84);
             this.txtFybm.Name = "txtFybm";
             this.txtFybm.Size = new System.Drawing.Size(936, 20);

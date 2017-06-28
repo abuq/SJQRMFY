@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
@@ -30,7 +31,7 @@ namespace Songjiang_District_Peoples_Court
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
+            
             string serverIP = ConfigurationManager.AppSettings["ServerIP"];
             int serverPort = int.Parse(ConfigurationManager.AppSettings["ServerPort"]);
             string title = ConfigurationManager.AppSettings["Title"];

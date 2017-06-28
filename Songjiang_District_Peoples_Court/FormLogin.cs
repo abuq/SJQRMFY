@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SQLite;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -33,6 +34,8 @@ namespace Songjiang_District_Peoples_Court
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
+            //System.Diagnostics.Process myProcess = System.Diagnostics.Process.Start(Path.Combine(Application.StartupPath, "AutoUpdater.exe"));
+            //myProcess.WaitForExit();
             string localIP = GetLocalIP();
             var user = db.UserIPInfo.Where(u => u.IPAddress == localIP).ToList();
             if (user.Count == 1)

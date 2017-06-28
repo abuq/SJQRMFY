@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:intf="com.pdcss.axis.soap.webService" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:impl="com.pdcss.axis.soap.webService" targetNamespace="com.pdcss.axis.soap.webService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="com.pdcss.axis.soap.webService">
+      <xsd:import namespace="http://xml.apache.org/xml-soap" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="ArrayOf_xsd_anyType">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="xsd:anyType[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xml.apache.org/xml-soap">
+      <xsd:import namespace="com.pdcss.axis.soap.webService" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="Vector">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="xsd:anyType" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getQueryInfoRequest">
+    <wsdl:part name="json" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="getIndexValueResponse">
+    <wsdl:part name="getIndexValueReturn" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="getQueryInfoResponse">
+    <wsdl:part name="getQueryInfoReturn" type="impl:ArrayOf_xsd_anyType" />
+  </wsdl:message>
+  <wsdl:message name="getIndexValueRequest">
+    <wsdl:part name="index_code" type="soapenc:string" />
+    <wsdl:part name="beg_year" type="soapenc:string" />
+    <wsdl:part name="beg_month" type="soapenc:string" />
+    <wsdl:part name="beg_day" type="soapenc:string" />
+    <wsdl:part name="end_year" type="soapenc:string" />
+    <wsdl:part name="end_month" type="soapenc:string" />
+    <wsdl:part name="end_day" type="soapenc:string" />
+    <wsdl:part name="fybm" type="soapenc:string" />
+    <wsdl:part name="bmbm" type="soapenc:string" />
+    <wsdl:part name="rybm" type="soapenc:string" />
+    <wsdl:part name="others" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:portType name="OpenAxisWebService">
+    <wsdl:operation name="getIndexValue" parameterOrder="index_code beg_year beg_month beg_day end_year end_month end_day fybm bmbm rybm others">
+      <wsdl:input name="getIndexValueRequest" message="impl:getIndexValueRequest" />
+      <wsdl:output name="getIndexValueResponse" message="impl:getIndexValueResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getQueryInfo" parameterOrder="json">
+      <wsdl:input name="getQueryInfoRequest" message="impl:getQueryInfoRequest" />
+      <wsdl:output name="getQueryInfoResponse" message="impl:getQueryInfoResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="sjjkSoapBinding" type="impl:OpenAxisWebService">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="getIndexValue">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getIndexValueRequest">
+        <wsdlsoap:body use="encoded" namespace="com.pdcss.axis.soap.webService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getIndexValueResponse">
+        <wsdlsoap:body use="encoded" namespace="com.pdcss.axis.soap.webService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQueryInfo">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getQueryInfoRequest">
+        <wsdlsoap:body use="encoded" namespace="com.pdcss.axis.soap.webService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getQueryInfoResponse">
+        <wsdlsoap:body use="encoded" namespace="com.pdcss.axis.soap.webService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OpenAxisWebServiceService">
+    <wsdl:port name="sjjk" binding="impl:sjjkSoapBinding">
+      <wsdlsoap:address location="http://gyreport.hshfy.sh.cn/sjjk/axisapi/sjjk" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

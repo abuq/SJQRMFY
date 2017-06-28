@@ -68,6 +68,7 @@ namespace WebServiceDataHandler
         private void btnGet_Click(object sender, EventArgs e)
         {
             localhost.WebService1 gyReport = new localhost.WebService1();
+            ServiceReference1.OpenAxisWebServiceClient gyreport2 = new ServiceReference1.OpenAxisWebServiceClient();
             code = txtCode.Text;
             begYear = txtBegYear.Text;
             begMonth = txtBegMonth.Text;
@@ -79,10 +80,12 @@ namespace WebServiceDataHandler
             bmbm = txtBmbm.Text;
             rybm = txtRybm.Text;
             other = txtOther.Text;
-            xml = gyReport.getIndexValue(code, begDay, begMonth, begDay, endYear, endMonth, endDay, fybm, bmbm, rybm, other);
+
+            xml = gyreport2.getIndexValue(code, begYear, begMonth, begDay, endYear, endMonth, endDay, fybm, bmbm, rybm, other);
+            //xml = gyReport.getIndexValue(code, begDay, begMonth, begDay, endYear, endMonth, endDay, fybm, bmbm, rybm, other);
             if (xml.Length > 0)
             {
-
+                //memoEdit1.Text = xml;
                 XmlDocument xd = new XmlDocument();
                 xd.LoadXml(xml);
                 memoEdit1.Text = xd.InnerXml;
