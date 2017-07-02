@@ -23,6 +23,7 @@ namespace Songjiang_District_Peoples_Court
         #endregion
         private void FormView_Load(object sender, EventArgs e)
         {
+            
             //获取标题信息
             DataSet odsTitle = osh.GetTitle();
             if (odsTitle != null && odsTitle.Tables.Count == 1)
