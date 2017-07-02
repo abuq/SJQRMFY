@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServiceTest", "WebServic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServiceDataHandler", "WebServiceDataHandler\WebServiceDataHandler.csproj", "{5C36F5F4-8CAC-44C8-90A2-860493218AB5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Songjiang_District_WebserviceApi", "Songjiang_District_WebserviceApi\Songjiang_District_WebserviceApi.csproj", "{4B3F4870-42DF-421F-B1E0-23C4034BE257}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CD_ROM|Any CPU = CD_ROM|Any CPU
@@ -60,6 +62,16 @@ Global
 		{5C36F5F4-8CAC-44C8-90A2-860493218AB5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5C36F5F4-8CAC-44C8-90A2-860493218AB5}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
 		{5C36F5F4-8CAC-44C8-90A2-860493218AB5}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{4B3F4870-42DF-421F-B1E0-23C4034BE257}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{4B3F4870-42DF-421F-B1E0-23C4034BE257}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{4B3F4870-42DF-421F-B1E0-23C4034BE257}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B3F4870-42DF-421F-B1E0-23C4034BE257}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B3F4870-42DF-421F-B1E0-23C4034BE257}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B3F4870-42DF-421F-B1E0-23C4034BE257}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{4B3F4870-42DF-421F-B1E0-23C4034BE257}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B3F4870-42DF-421F-B1E0-23C4034BE257}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B3F4870-42DF-421F-B1E0-23C4034BE257}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{4B3F4870-42DF-421F-B1E0-23C4034BE257}.SingleImage|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
